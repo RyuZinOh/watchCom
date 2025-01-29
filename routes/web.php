@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthManager;
 use App\Http\Controllers\ProductsManager;
 
 Route::get('/', [ProductsManager::class, 'index'])->name('home');
+//detailed product
+Route::get('product/{slug}', [ProductsManager::class, 'details'])->name('product.details');
 
 // Authentication Routes
 Route::get('login', [AuthManager::class, 'login'])->name('login'); 
