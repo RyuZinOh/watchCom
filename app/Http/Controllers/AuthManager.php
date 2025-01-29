@@ -64,4 +64,11 @@ class AuthManager extends Controller
 
         return redirect()->route('register')->with('error', 'User creation failed.');
     }
+
+    //logout
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
+    }
 }
