@@ -18,6 +18,10 @@ Route::post('register', [AuthManager::class, 'registerPost'])->name('register.po
 
 Route::middleware("auth")->group(function () {
     Route::get('cart/{id}', [ProductsManager::class, 'addtoCart'])->name('cart.add');
+    Route::get('cart', [ProductsManager::class, 'showCart'])->name('cart.show');
+    Route::post('cart/{id}/update', [ProductsManager::class, 'updateCartQuantity'])->name('cart.update');
+    Route::get('cart/{id}/remove', [ProductsManager::class, 'removeCartItem'])->name('cart.remove');
+    
 });
 
 //logout
