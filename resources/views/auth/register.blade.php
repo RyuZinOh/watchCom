@@ -7,7 +7,14 @@
     <div class="card shadow-lg" style="max-width: 400px; width: 100%;">
         <div class="card-body">
             <h4 class="card-title text-center mb-4">Register</h4>
-            
+
+            <!-- Display success message -->
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
             <!-- Display error messages -->
             @if(session('error'))
                 <div class="alert alert-danger">

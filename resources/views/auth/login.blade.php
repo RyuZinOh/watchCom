@@ -8,7 +8,14 @@
         <div class="card-body">
             <h4 class="card-title text-center mb-4">Login</h4>
             
-            <!-- Display error messages -->
+            <!-- Display success message -->
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            <!-- Display error message -->
             @if(session('error'))
                 <div class="alert alert-danger">
                     {{ session('error') }}

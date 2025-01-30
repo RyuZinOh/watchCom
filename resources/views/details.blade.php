@@ -4,6 +4,12 @@
 
 @section("content")
 <main class="container py-5">
+    @if(session('success') && session('success')['product_id'] == $product->id)
+        <div class="alert alert-success">
+            {{ session('success')['message'] }}
+        </div>
+    @endif
+
     <div class="row">
         <div class="col-md-6">
             <!-- Product Image -->
@@ -21,8 +27,8 @@
             <p class="text-muted">{{ $product->description }}</p>
 
             <!-- Add to Cart Button -->
-            <button class="btn" style="background-color: #3730a3; color: white; border: none;">Add to Cart</button>
-
+            <a href="{{ route('cart.add', ['id' => $product->id]) }}" class="btn" style="background-color: #3730a3; color: white; border: none;">Add to Cart</a>
+            
             <!-- Go Back Button -->
             <div class="mt-3">
                 <a href="{{ route('home') }}" class="btn btn-outline-primary" style="background-color: #3730a3; color: white; border: none;">Go back to Products</a>

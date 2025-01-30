@@ -16,8 +16,9 @@ Route::post('login', [AuthManager::class, 'loginPost'])->name('login.post');
 Route::get('register', [AuthManager::class, 'register'])->name('register');  
 Route::post('register', [AuthManager::class, 'registerPost'])->name('register.post');  
 
-
-
+Route::middleware("auth")->group(function () {
+    Route::get('cart/{id}', [ProductsManager::class, 'addtoCart'])->name('cart.add');
+});
 
 //logout
 Route::get('logout', [AuthManager::class, 'logout'])->name('logout');

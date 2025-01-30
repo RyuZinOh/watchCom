@@ -4,6 +4,12 @@
 
 @section("content")
 <main class="container py-5">
+    @if(session('success'))
+        <div class="alert alert-success mb-4">
+            {{ session('success')['message'] }}
+        </div>
+    @endif
+
     <section class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         @foreach ($products as $product)
             <div class="col">
@@ -22,9 +28,10 @@
 
                         <!-- Add to Cart and Details Button in a Row -->
                         <div class="d-flex justify-content-between mt-auto">
-                            <button class="btn btn-sm" style="background-color: #3730a3; color: white; border: none; width: 48%;">
+                            <a href="{{ route('cart.add', ['id' => $product->id]) }}" class="btn btn-sm" style="background-color: #3730a3; color: white; border: none; width: 48%;">
                                 Add to Cart
-                            </button>
+                            </a>
+
                             <a href="{{ route('product.details', $product->slug) }}" class="btn btn-sm btn-outline-primary" style="background-color: #3730a3; color: white; border: none; width: 48%;">
                                 Details
                             </a>
@@ -34,10 +41,9 @@
             </div>
         @endforeach
     </section>
-    <div class="d-flex justify-content-center mt-4" >
+
+    <div class="d-flex justify-content-center mt-4">
         {{ $products->links('pagination::bootstrap-5') }} <!-- Bootstrap pagination links -->
     </div>
-    
-
 </main>
 @endsection
