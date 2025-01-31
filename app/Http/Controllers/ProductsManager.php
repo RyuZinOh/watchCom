@@ -85,7 +85,9 @@ class ProductsManager extends Controller
             ->where('user_id', auth()->user()->id)
             ->delete();
 
-        return redirect()->route('cart.show')->with('success', 'Product removed from cart.');
+            return redirect()->route('cart.show')->with('success', [
+                'message' => 'Product removed from cart.'
+            ]);
     }
     
 }

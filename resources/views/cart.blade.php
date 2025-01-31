@@ -7,10 +7,11 @@
     <h1 class="mb-4 display-5 fw-bold text-dark">Your Cart</h1>
 
     @if(session('success'))
-        <div class="alert alert-success mb-4">
-            {{ session('success')['message'] }}
-        </div>
-    @endif
+    <div class="alert alert-success mb-4">
+        {{ session('success')['message'] }}
+    </div>
+@endif
+
 
     @if($cartItems->isEmpty())
         <div class="alert alert-warning mb-4">
@@ -108,3 +109,4 @@
     }
 </style>
 @endsection
+
