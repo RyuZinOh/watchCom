@@ -1,6 +1,7 @@
 # WatchCom - Laravel Application
 
-Welcome to **WatchCom**! This is a simple online watch store built with **Laravel**.
+Welcome to **WatchCom**! This is a simple online watch store built with **Laravel**. 
+also is my first self hosted project  running at  https://watchcom.safallama.com.np/ so this will be active until and unless my device is running
 
 
 ### **Features So Far:**
