@@ -1,7 +1,8 @@
 # WatchCom - Laravel Application
 
-Welcome to **WatchCom**! This is a simple online watch store built with **Laravel**. 
-also is my first self hosted project  running at  https://watchcom.safallama.com.np/ so this will be active until and unless my device is running
+
+Welcome to **WatchCom**! This is a simple online watch store built with **Laravel**.
+Also, my first self hosted project
 
 
 ### **Features So Far:**
@@ -25,7 +26,7 @@ Note: This mini project simply defines the base of how a folder struture works, 
 3. Set Up the Environment according to mysql
 4. Set Up the Database - watchcom [use xampp recommended]
 5. php artisan migrate
-6. beign to serve locally
+6. begin to serve locally
 
 
 # do i need help?
